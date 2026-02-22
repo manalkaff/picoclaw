@@ -30,8 +30,6 @@ services:
       dockerfile: Dockerfile
     container_name: picoclaw-gateway
     restart: unless-stopped
-    profiles:
-      - gateway
     # Uncomment to access host network; leave commented unless needed.
     #extra_hosts:
     #  - "host.docker.internal:host-gateway"
