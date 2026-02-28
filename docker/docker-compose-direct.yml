@@ -1,0 +1,15 @@
+services:
+
+  # ─────────────────────────────────────────────
+  # PicoClaw Gateway (Long-running Bot)
+  #   docker compose -f docker/docker-compose.yml up picoclaw-gateway
+  # ─────────────────────────────────────────────
+  picoclaw-gateway:
+    image: docker.io/sipeed/picoclaw:latest
+    container_name: picoclaw-gateway
+    restart: on-failure
+    # Uncomment to access host network; leave commented unless needed.
+    #extra_hosts:
+    #  - "host.docker.internal:host-gateway"
+    volumes:
+      - ./data:/root/.picoclaw
